@@ -10,7 +10,7 @@ git clone https://github.com/turtlebot/turtlebot_simulator
 
 # kobuki
 git clone https://github.com/yujinrobot/kobuki_msgs.git
-git clone --single-branch --branch melodic https://github.com/yujinrobot/kobuki.git
+git clone --branch melodic https://github.com/yujinrobot/kobuki.git
 
 mv kobuki/kobuki_description ./
 mv kobuki/kobuki_node ./
@@ -24,3 +24,6 @@ git clone https://github.com/yujinrobot/yujin_ocs.git
 
 mv yujin_ocs/yocs_cmd_vel_mux yujin_ocs/yocs_controllers .
 rm -rf yujin_ocs
+
+# viz
+git clone --branch indigo https://github.com/turtlebot/turtlebot_viz.git

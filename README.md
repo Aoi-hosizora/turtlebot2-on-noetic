@@ -67,6 +67,41 @@ source ./devel/setup.bash
 
 + These procedures are almost same with https://github.com/gaunthan/Turtlebot2-On-Melodic.
 + If `kobuki` is not be installed first, it will generate some errors: `Could not find a package configuration file provided by "kobuki_driver"`.
++ `turtlebot/turtlebot_viz` install `rviz` for `turtlebot_rviz_launchers`.
+
+## Work with turtlebot2
+
+### Bring Up
+
+```bash
+roslaunch turtlebot_bringup minimal.launch
+```
+
+### Control by KeyBoard
+
+```bash
+roslaunch turtlebot_teleop keyboard_teleop.launch
+```
+
+### Work with rviz
+
+```bash
+roslaunch turtlebot_rviz_launchers view_robot.launch
+```
+
+### Some problem
+
+1. Kobuki : device does not (yet) available, is the usb connected?.
+
+> Then do the obvious – make sure kobuki is turned on (leds should be active on the kobuki) and the cable is plugged in. If you are sure about both of these, check to see that your system has had the udev rule applied for /dev/kobuki
+
+```bash
+ls -n /dev | grep kobuki # nothing
+rosrun kobuki_ftdi create_udev_rules
+ls -n /dev | grep kobuki # has one
+```
+
+2. Other see [turtlebot移动机器人（05）：turtlebot-Kobuki和Kinect](https://robot-ros.com/robot/37686.html)
 
 ## References
 
@@ -74,3 +109,4 @@ source ./devel/setup.bash
 + [yujinrobot/kobuki_core:kobuki_core.rosinstall](https://github.com/yujinrobot/kobuki_core/blob/melodic/kobuki_core.rosinstall)
 + [Is it possible to install Turtlebot software on ROS Noetic ??](https://answers.ros.org/question/355435/hi-i-am-using-kubuntu-2004-and-have-installed-ros-noetic-on-it-is-it-possible-to-install-turtlebot-software-on-ros-noetic-i-couldnot-find-any-liks-any/)
 + [Jetson Xavier: Turtlebot2をROS Melodicで動かす](https://demura.net/robot/athome/15887.html)
++ [turtlebot移动机器人（05）：turtlebot-Kobuki和Kinect](https://robot-ros.com/robot/37686.html)
